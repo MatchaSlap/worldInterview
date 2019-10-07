@@ -1,0 +1,84 @@
+<v-container>
+    <v-row>
+        <v-btn @click="getAnswers">test</v-btn>
+    </v-row>
+    <v-row>
+        <v-col>
+            <v-card>
+                <v-card-title>{{question.text}}</v-card-title>
+            </v-card>
+        </v-col>
+    </v-row>
+    <v-row>
+        <v-col v-for="(answer,aid) in answers">
+            <v-card width='300' max-height='400'>
+                <v-card-text class="font-weight-bold">
+                    {{answer.shortText}}
+                </v-card-text>
+                <v-card-actions>
+                    <v-list-item class="grow">
+                        <v-list-item-avatar color="grey darken-3">
+                            <v-img class="elevation-6"
+                                src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light">
+                            </v-img>
+                        </v-list-item-avatar>
+
+                        <v-list-item-content>
+                            <v-list-item-title>Evan You</v-list-item-title>
+                        </v-list-item-content>
+
+                        <v-row align="center" justify="end">
+                            <v-btn color="orange" text icon v-on:click="count(aid,'like')">
+                                <v-icon >mdi-thumb-up</v-icon>
+                            </v-btn>
+                            <span class="subheading mr-2">{{answer.eval.like}}</span>
+                            <v-btn color="blue" text icon v-on:click="count(aid,'wow')">
+                                <v-icon >mdi-emoticon-excited</v-icon>
+                            </v-btn>
+                            <span class="subheading">{{answer.eval.wow}}</span>
+                            <v-btn icon @click="answer.show = !answer.show">
+                                <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                            </v-btn>
+                        </v-row>
+                    </v-list-item>
+                </v-card-actions>
+                <v-expand-transition>
+                    <div v-show="answer.show">
+                        <v-row>
+                            <v-col>
+                                    <v-list dense>
+                                            <v-subheader>comments</v-subheader>
+                                            <v-list-item-group color="primary">
+                                                <v-list-item v-for="(item,i) in answer.comments" :key="i">
+                                                    <v-list-item-icon>
+                                                        <v-icon v-text="item.icon"></v-icon>
+                                                    </v-list-item-icon>
+                                                    <v-list-item-content>
+                                                        <v-list-item-title v-text="item.text"></v-list-item-title>
+                                                        <v-list-item-subtitle v-text="item.date"></v-list-item-subtitle>
+                                                    </v-list-item-content>
+                                                </v-list-item>
+                                            </v-list-item-group>
+                                        </v-list>
+        
+                            </v-col>
+                        </v-row>
+                        <v-row>
+                            <v-col cols=10>
+                                <v-text-field label="message" width=200 v-model="answer.preComment"></v-text-field>
+                            </v-col>
+                            <v-col cols=2>
+                                <v-btn color="red" text icon v-on:click="postComment(aid)">
+                                    <v-icon>mdi-send</v-icon>
+                                </v-btn>
+                            </v-col>
+                        </v-row>
+                        <!-- <v-card-text>
+                            I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+                          </v-card-text> -->
+                    </div>
+                </v-expand-transition>
+            </v-card>
+        </v-col>
+    </v-row>
+</v-container>

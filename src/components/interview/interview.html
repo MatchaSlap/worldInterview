@@ -1,0 +1,23 @@
+<v-container>
+    <v-row>
+        <v-col>
+            <v-card>
+                <v-card-title>{{question.text}}</v-card-title>
+            </v-card>
+        </v-col>
+    </v-row>
+    <v-row>
+        <v-col>
+            <v-textarea
+            outlined name="answer" label="Your Answer"
+            v-model="answer">
+            </v-textarea>
+        </v-col>
+    </v-row>
+    <v-row>
+        <v-col>
+            <v-btn @click="post">Post</v-btn>
+        </v-col>
+    </v-row>
+    <v-btn @click="test">Test</v-btn>
+</v-container>

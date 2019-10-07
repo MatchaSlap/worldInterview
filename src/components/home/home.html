@@ -1,0 +1,33 @@
+<v-container>
+    <v-row>
+        <v-col>
+            <v-card>
+                <v-card-title>Activity</v-card-title>
+                <v-card-text>
+                    <v-list>
+                        <template v-for="(item, index) in answers">
+                            <!-- <v-subheader v-if="item.header" :key="item.header" v-text="item.header"></v-subheader>
+                            <v-divider v-else-if="item.divider" :key="index" :inset="item.inset"></v-divider> -->
+                            <v-list-item  @click="">
+                                <v-list-item-content>
+                                    <v-list-item-title v-html="questions[item.qid].text"></v-list-item-title>
+                                    <v-list-item-subtitle v-html="item.text"></v-list-item-subtitle>
+                                    <v-list-item-action-text v-html="questions[item.qid].date"></v-list-item-action-text>
+                                </v-list-item-content>
+
+                                <v-list-item-icon>
+                                    <v-row align="center" justify="end">
+                                            <v-icon >mdi-thumb-up</v-icon>
+                                            <span class="subheading mr-2">{{item.eval.like}}</span>
+                                            <v-icon>mdi-emoticon-excited</v-icon>
+                                            <span class="subheading mr-2">{{item.eval.wow}}</span>
+                                    </v-row>
+                                </v-list-item-icon>
+                            </v-list-item>
+                        </template>
+                    </v-list>
+                </v-card-text>
+            </v-card>
+        </v-col>
+    </v-row>
+</v-container>
