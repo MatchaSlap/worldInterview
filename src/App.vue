@@ -24,7 +24,7 @@
       </div>
     </transition>
     <!-- </v-content> -->
-    <v-btn @click="show=!show">test</v-btn>
+    <!-- <v-btn @click="show=!show">test</v-btn>
     <transition>
         <h1>aaaaa</h1>
     </transition>
@@ -32,8 +32,7 @@
       <div v-show="show">
         <h1>bbbb</h1>
       </div>
-    </transition>
-
+    </transition> -->
   </v-app>
 </template>
 

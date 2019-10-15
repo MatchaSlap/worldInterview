@@ -3,7 +3,6 @@ export default{
     data:()=>({
         profile:{
             img:"",
-            text:"はじめまして、HYです！はじめまして、HYです！はじめまして、HYです！はじめまして、HYです！はじめまして、HYです！はじめまして、HYです！はじめまして、HYです！はじめまして、HYです！はじめまして、HYです！",
         },
         skills:{
             "Front-End":[
@@ -12,10 +11,10 @@ export default{
                 {name:"Nuxt",year:1,level:1},
             ],
             "Back-End":[
-                {name:"Java",year:3,level:2},
-                {name:"C#",year:4,level:2},
-                {name:"Nodejs",year:2,level:2},
-                {name:"Python",year:2,level:2},
+                {name:"Java",year:3,level:3},
+                {name:"C#",year:4,level:3},
+                {name:"Nodejs",year:2,level:3},
+                {name:"Python",year:2,level:3},
             ],
             "Database":[
                 {name:"Oracle",year:7,level:3},
@@ -30,9 +29,9 @@ export default{
                 {name:"CloudFormation",year:1,level:1},
             ],
             "MachineLearning":[
-                {name:"openCV",year:1,level:2},
+                {name:"openCV",year:1,level:3},
                 {name:"scikit-learn",year:1,level:2},
-                {name:"chainer",year:1,level:1},
+                {name:"chainer",year:1,level:2},
             ],
             "Tool":[
                 {name:"Github",year:3,level:3},
@@ -48,38 +47,19 @@ export default{
                 {name:"日商簿記2級",year:1,level:0},
             ],
 
-            // Frontend:[
-            //     {name:"JavaScript",history:1,level:2,text:"機械学習の実装"},
-            //     {name:"Vue.Js",history:3,level:2,text:"いいいい"},
-            // ],
-            // Backend:[
-            //     {name:"python",history:1,level:2,text:"機械学習の実装"},
-            //     {name:"C++",history:3,level:2,text:"いいいい"},
-            //     {name:"C#",history:5,level:2,text:"ううううう"},
-            //     {name:"nodejs",history:1,level:2,text:"機械学習の実装"},
-            // ],
-            // Certification:[
-            //     {name:"AWS Solution Architect(Associate)",history:1,level:2,text:"機械学習の実装"},
-            //     {name:"JDLA Deep Learning for GENERAL",history:1,level:2,text:"機械学習の実装"},
-            //     {name:"データベーススペシャリスト",history:1,level:2,text:"機械学習の実装"},
-            //     {name:"Oracle Master Gold",history:1,level:2,text:"機械学習の実装"},
-            // ],
         },
         works:{
             "Standup-Meeting-Bot":{
-                year:"2018",
                 img:"",
                 text:"Slack上でStandup-Meetingを行うために作ったBotです。サーバレスアーキテクチャを採用し、運用コストを抑えました。",
                 techs:["Nodejs","Lambda","DynamoDB","SlackAPI"]
             },
             "JIRAチケット起票-Bot":{
-                year:"2019",
                 img:"",
                 text:"SlackからJIRAチケットを起票できるBotです。",
                 techs:["Nodejs","Lambda","DynamoDB","SlackAPI"]
             },
             "AWS-Bot":{
-                year:"2019",
                 img:"",
                 text:"SlackからAWSリソースを操作できるBotです。EC2起動/停止、SG穴空けなど。",
                 techs:["Nodejs","Lambda","DynamoDB","SlackAPI"]
