@@ -1,0 +1,175 @@
+<v-content>
+    <v-img :src="require('../../assets/top.jpeg')" height="400">
+        <div style="color: white;position: relative;left: 10%;top: 40%;">
+            <h1>Matcha PORTFOLIO</h1>
+            <h3>Serverless Enginner</h3>
+        </div>
+    </v-img>
+    <v-row id="profile">
+        <v-col style="background-color:#d7e3fa">
+            <v-list-item style="position: relative;left: 35%;">
+                <v-list-item-icon>
+                    <v-icon large color="red">mdi-artist</v-icon>
+                </v-list-item-icon>
+                <h1>PROFILE</h1>
+            </v-list-item>
+        </v-col>
+    </v-row>
+    <v-container>
+        <v-row>
+            <v-col cols=4>
+                <v-img :src="require('../../assets/top.png')"></v-img>
+            </v-col>
+            <v-col cols=8>
+                <div style="word-wrap:break-word">
+                    <h4>関西出身のエンジニアです。</h4>
+                    <h4>大学時代にプログラミングに出会ってから物作りが好きです！</h4>
+                    <h4>卒業後はSIerに就職し、ERP導入プロジェクトのPMを担っています。</h4>
+                    <br>
+                    <h4>将来は仲間を集って、世を楽しくするプロダクトを届けたいと思ってます！</h4>
+                    <h4>楽しく・調和を大切にしているので、性格は柔和な方です。</h4>
+                    <h4>好奇心が強く、新しい技術に挑戦するのが好きです。</h4>
+                    <h4>休日はもくもく会に参加したり、ずっとコーディングしてます。</h4>
+                    <h4>スキルセットやこれまでの経験は以下にあります。どうぞよろしくお願いします^^</h4>
+                    <br>
+                    <h4>P.S. 音楽(フェス・バンド演奏)が好きなので、音楽好きな方も是非！</h4>
+                </div>
+            </v-col>
+        </v-row>
+    </v-container>
+    <v-row id="skills">
+            <v-col style="background-color: #d7e3fa">
+                <v-list-item style="position: relative;left: 35%;">
+                    <v-list-item-icon>
+                        <v-icon large color="red">mdi-artist</v-icon>
+                    </v-list-item-icon>
+                    <h1>SKILLS</h1>
+                </v-list-item>
+            </v-col>
+        </v-row>
+    <v-container>
+        
+        <v-row>
+            <v-col>
+                <v-card>
+                    <v-card-text>
+                        <v-icon color="orange">mdi-star</v-icon>5：技術支援可
+                        <v-icon color="orange">mdi-star</v-icon>4：業務アプリに導入可
+                        <v-icon color="orange">mdi-star</v-icon>3：個人アプリに導入可
+                        <v-icon color="orange">mdi-star</v-icon>2：基本機能を利用可
+                        <v-icon color="orange">mdi-star</v-icon>1：チュートリアル
+                    </v-card-text>
+                </v-card>
+            </v-col>
+        </v-row>
+        <v-row dense>
+            <v-col v-for="(val,name,i) in skills" cols=6>
+                <v-card>
+                    <v-card-title>
+                        <v-icon color="red">mdi-power</v-icon>
+                        {{name}}
+                    </v-card-title>
+                    <v-card-text >
+                        <v-row v-for="v in val" dense>
+                            <v-col cols="6">
+                                <v-list-item-title v-text="v.name"></v-list-item-title>
+                            </v-col>
+                            <v-col cols="2">
+                                <v-list-item-title v-text="v.year+'年'"></v-list-item-title>
+                            </v-col>
+                            <v-col cols="4">
+                                <div style="position: relative;bottom: 20%;">
+                                    <v-rating background-color="orange lighten-3" color="orange" length=5 dense readonly v-model="v.level">
+                                    </v-rating>
+                                </div>
+                            </v-col>
+                        </v-row>
+                    </v-card-text>
+                </v-card>
+            </v-col>
+        </v-row>
+    </v-container>
+
+        <v-row id="works">
+                <v-col style="background-color: #d7e3fa">
+                        <v-list-item style="position: relative;left: 35%;">
+                            <v-list-item-icon>
+                                <v-icon large color="red">mdi-artist</v-icon>
+                            </v-list-item-icon>
+                            <h1>WORKS</h1>
+                        </v-list-item>
+                    </v-col>
+        </v-row>
+    <v-container>
+
+        <v-row dense>
+            <v-col v-for="(val,name,i) in works" cols=6>
+                <v-card >
+                    <v-img height="200px"
+                    class="white--text align-end"
+                    gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5) "
+                    src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg">
+                        <v-card-title>
+                            <v-icon color="green">mdi-cat</v-icon>
+                                {{name}}
+                        </v-card-title>
+                    </v-img>
+                    <v-card-text>{{val.text}}</v-card-text>
+                    <v-card-actions>
+                        <v-chip-group v-for="v in val.techs" column active-class="deep-purple accent-4 white--text">
+                            <v-chip>{{v}}</v-chip>
+                        </v-chip-group>
+                    </v-card-actions>
+                </v-card>
+            </v-col>
+        </v-row>    
+    </v-container>
+
+        <v-row id="history">
+                <v-col style="background-color: #d7e3fa">
+                        <v-list-item style="position: relative;left: 35%;">
+                            <v-list-item-icon>
+                                <v-icon large color="red">mdi-artist</v-icon>
+                            </v-list-item-icon>
+                            <h1>HISTORY</h1>
+                        </v-list-item>
+                    </v-col>
+        </v-row>
+    <v-container>
+
+        <v-row>
+            <v-timeline dense>
+                <v-timeline-item v-for="v in historys">
+                    <v-card color="red darken-3" dark>
+                        <v-card-title class="title">{{v.title}}</v-card-title>
+                        <v-card-text class="white text--primary">
+                            <v-row v-for="text in v.text">
+                                {{text}}
+                            </v-row>
+                        </v-card-text>
+                    </v-card>
+                </v-timeline-item>
+            </v-timeline>
+        </v-row>
+    </v-container>
+
+        <v-row id="contact">
+                <v-col style="background-color: #d7e3fa">
+                        <v-list-item style="position: relative;left: 35%;">
+                            <v-list-item-icon>
+                                <v-icon large color="red">mdi-artist</v-icon>
+                            </v-list-item-icon>
+                            <h1>CONTACT</h1>
+                        </v-list-item>
+                    </v-col>
+        </v-row>
+    <v-container>
+        <v-row>
+            <v-list-item>
+                <v-icon large>mdi-twitter-circle</v-icon>
+                <v-icon large>mdi-github-circle</v-icon>
+                <v-icon large>mdi-gmail</v-icon>
+            </v-list-item>
+        </v-row>
+    </v-container>
+</v-content>

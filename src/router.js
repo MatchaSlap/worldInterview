@@ -1,11 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Home from './views/Home.vue'
-import Interview from './components/Interview.vue'
-import Answers from './components/Answers.vue'
-import User from './components/User.vue'
-import Top from './components/Top.vue'
-import Home from './components/Home.vue'
+import Top from './views/Top.vue'
+import goTo from 'vuetify/es5/services/goto'
 
 Vue.use(Router)
 
@@ -13,38 +9,11 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'home',
-    //   component: Home
-    // },
     {
       path: '/',
       name: 'top',
-      component: Top
-    },
-    {
-      path: '/interview',
-      name: 'interview',
-      component: Interview
-    },
-    {
-      path: '/answers/:id',
-      name: 'answers',
-      component: Answers,
-      props:true,
-    },
-    {
-      path: '/user/:id',
-      name: 'user',
-      component: User,
-      props:true,
-    },
-    {
-      path: '/home/:id',
-      name: 'home',
-      component: Home,
-      props:true,
+      component: Top,
+      // meta: { scrollToTop: true }
     },
     {
       path: '/about',
@@ -54,5 +23,32 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     }
-  ]
+  ],
+  scrollBehavior: (to, from, savedPosition) => {
+    let scrollTo = 0
+
+    if (to.hash) {
+      scrollTo = to.hash
+    } else if (savedPosition) {
+      scrollTo = savedPosition.y
+    }
+
+    // const scroll = {}
+    const position = {}
+    // new navigation.
+    // scroll to anchor by returning the selector
+    if (to.hash) {
+      // position.selector = to.hash
+      position.x=0;
+      position.y=1000
+
+      // specify offset of the element
+      if (to.hash === '#anchor2') {
+        position.offset = { y: 100 }
+      }
+    }
+    return position
+
+    // return goTo(scrollTo)
+  },  
 })
